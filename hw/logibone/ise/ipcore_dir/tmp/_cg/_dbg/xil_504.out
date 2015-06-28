@@ -1,0 +1,44 @@
+SET_PARAMETER ddr_alignment C0
+SET_PARAMETER v6_bus_out_tap 0
+SET_PARAMETER bus_out_delay NONE
+SET_PARAMETER v6_clk_sig_type DIFF
+SET_PARAMETER clk_delay FIXED
+SET_PARAMETER bus_out_tap 0
+SET_PARAMETER serialization_factor 4
+SET_PARAMETER enable_train false
+SET_PARAMETER use_phase_detector false
+SET_PARAMETER bus_in_tap 42
+SET_PARAMETER train_constant 0
+SET_PARAMETER bus_tap_wrap NOT_APP
+SET_PARAMETER notes None
+SET_PARAMETER iddr_rst_type ASYNC
+SET_PARAMETER v6_bus_in_tap 0
+SET_PARAMETER v6_ddr_alignment SAME_EDGE_PIPELINED
+SET_PARAMETER v6_bus_out_delay NONE
+SET_PARAMETER clk_fwd false
+SET_PARAMETER bus_tap_reset NOT_APP
+SET_PARAMETER clk_io_std LVDS_33
+SET_PARAMETER bus_dir INPUTS
+SET_PARAMETER bus_in_delay FIXED
+SET_PARAMETER v6_interface_type NETWORKING
+SET_PARAMETER use_serialization true
+SET_PARAMETER component_name deser_1_4
+SET_PARAMETER v6_active_edge SDR
+SET_PARAMETER v6_clk_io_std LVCMOS18
+SET_PARAMETER interface_type NETWORKING
+SET_PARAMETER bus_sig_type DIFF
+SET_PARAMETER bus_io_std LVDS_33
+SET_PARAMETER v6_iddr_rst_type ASYNC
+SET_PARAMETER clk_tap 10
+SET_PARAMETER active_edge RISING
+SET_PARAMETER clk_sig_type DIFF
+SET_PARAMETER v6_clk_buf BUFIO
+SET_PARAMETER v6_bus_in_delay NONE
+SET_PARAMETER enable_bitslip false
+SET_PARAMETER clk_buf BUFIO2
+SET_PARAMETER use_template Custom
+SET_PARAMETER v6_oddr_alignment SAME_EDGE
+SET_PARAMETER system_data_width 1
+SET_ERROR_CODE 2
+SET_ERROR_MSG  CANCEL: Customization cancelled.
+SET_ERROR_TEXT Finished initializing IP model.	

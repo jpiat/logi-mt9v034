@@ -1,0 +1,14 @@
+# Output products list for <fft>
+fft/doc/xfft_ds260.pdf
+fft/doc/xfft_v7_1_readme.txt
+fft/doc/xfft_v7_1_vinfo.html
+fft.asy
+fft.gise
+fft.ngc
+fft.sym
+fft.vhd
+fft.vho
+fft.xco
+fft.xise
+fft_flist.txt
+fft_xmdf.tcl
