@@ -15,6 +15,7 @@ NET SYS_SPI_SCK TNM_NET = clk32_grp;
 
 
 NET "SYS_SPI_SCK" CLOCK_DEDICATED_ROUTE = FALSE;
+PIN "BUFG_3.O" CLOCK_DEDICATED_ROUTE = FALSE;
 
 ##############################################################################
 # Pin LOC Constraints #
@@ -31,14 +32,14 @@ NET "LED<1>"       		LOC = "P104" 		| IOSTANDARD = LVTTL;		#SHARED WITH ARD_D7
 #	
 
 #SATA###########################################################################
-NET "SATA_CLK_P"			LOC = "P127"		| IOSTANDARD = LVDS_33;
-NET "SATA_CLK_N"			LOC = "P126"		| IOSTANDARD = LVDS_33;
-NET "SATA_DATA_P"			LOC = "P121"		| IOSTANDARD = LVDS_33;
-NET "SATA_DATA_N"			LOC = "P120"		| IOSTANDARD = LVDS_33;
+NET "SATA_CLK_P"			LOC = "P127"		;
+NET "SATA_CLK_N"			LOC = "P126"			;
+NET "SATA_DATA_P"			LOC = "P121"	;
+NET "SATA_DATA_N"			LOC = "P120"	;
 			
 #SDRAM#########################################################################
 NET "SDRAM_CKE"			LOC = "P48"			| IOSTANDARD = LVTTL ;
-NET "SDRAM_CLK"			LOC = "P50"			| IOSTANDARD = LVTTL | SLEW = FAST ;
+NET "SDRAM_CLK"			LOC = "P50"			| IOSTANDARD = LVTTL | SLEW = SLOW ;
 NET "SDRAM_nCAS"		LOC = "P7"			| IOSTANDARD = LVTTL ;
 NET "SDRAM_nRAS"		LOC = "P6"			| IOSTANDARD = LVTTL ;
 NET "SDRAM_nWE"			LOC = "P8"			| IOSTANDARD = LVTTL ;
@@ -105,14 +106,14 @@ NET "SDRAM_DQ<15>"		LOC = "P55"			| IOSTANDARD = LVTTL ;
 #NET "PMOD3<6>" 			LOC = "P117" 		| IOSTANDARD = LVTTL;
 #NET "PMOD3<7>" 			LOC = "P116" 		| IOSTANDARD = LVTTL;
 ##PMOD4#############################################################################
-#NET "PMOD4<0>" 			LOC = "P112" 		| IOSTANDARD = LVTTL;
-#NET "PMOD4<1>" 			LOC = "P111" 		| IOSTANDARD = LVTTL;
-#NET "PMOD4<2>" 			LOC = "P132" 		| IOSTANDARD = LVTTL;
-#NET "PMOD4<3>" 			LOC = "P131" 		| IOSTANDARD = LVTTL;
-#NET "PMOD4<4>" 			LOC = "P115" 		| IOSTANDARD = LVTTL;
-#NET "PMOD4<5>" 			LOC = "P114" 		| IOSTANDARD = LVTTL;
-#NET "PMOD4<6>" 			LOC = "P134" 		| IOSTANDARD = LVTTL;
-#NET "PMOD4<7>" 			LOC = "P133" 		| IOSTANDARD = LVTTL;
+NET "PMOD4<0>" 			LOC = "P112" 		| IOSTANDARD = LVTTL;
+NET "PMOD4<1>" 			LOC = "P111" 		| IOSTANDARD = LVTTL;
+NET "PMOD4<2>" 			LOC = "P132" 		| IOSTANDARD = LVTTL;
+NET "PMOD4<3>" 			LOC = "P131" 		| IOSTANDARD = LVTTL;
+NET "PMOD4<4>" 			LOC = "P115" 		| IOSTANDARD = LVTTL;
+NET "PMOD4<5>" 			LOC = "P114" 		| IOSTANDARD = LVTTL;
+NET "PMOD4<6>" 			LOC = "P134" 		| IOSTANDARD = LVTTL;
+NET "PMOD4<7>" 			LOC = "P133" 		| IOSTANDARD = LVTTL;
 
 #PMOD4 LVDS CONSTRAINTS#############################################################
 #NET "P4_1_LVDS3_P" 		LOC = "P112" 		| IOSTANDARD = LVDS_33;

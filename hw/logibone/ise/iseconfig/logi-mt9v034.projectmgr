@@ -12,20 +12,19 @@
          <ClosedNode>/logibone_mt9v034 - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logibone|hdl|logibone_mt9v034.vhd/FiFO_0 - wishbone_dram_fifo - RTL/fifo_write_from_bus - dram_fifo - Behavioral</ClosedNode>
          <ClosedNode>/logibone_mt9v034 - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logibone|hdl|logibone_mt9v034.vhd/FiFO_0 - wishbone_fifo - RTL</ClosedNode>
          <ClosedNode>/logibone_mt9v034 - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logibone|hdl|logibone_mt9v034.vhd/FiFO_0 - wishbone_fifo - RTL/fifo_B - dp_fifo - Behavioral</ClosedNode>
-         <ClosedNode>/logibone_mt9v034 - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logibone|hdl|logibone_mt9v034.vhd/cam_0 - cam_deser_4_to_pixels_v2 - Behavioral</ClosedNode>
          <ClosedNode>/sdram_fifo_test - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logibone|hdl|sdram_fifo_test.vhd</ClosedNode>
          <ClosedNode>/sdram_fifo_test - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logibone|hdl|sdram_fifo_test.vhd/FiFO_0 - wishbone_dram_fifo - RTL/fifo_read_from_bus - dram_fifo - Behavioral</ClosedNode>
          <ClosedNode>/sdram_fifo_test - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logibone|hdl|sdram_fifo_test.vhd/FiFO_0 - wishbone_dram_fifo - RTL/fifo_write_from_bus - dram_fifo - Behavioral</ClosedNode>
          <ClosedNode>/wishbone_fifo - RTL |home|jpiat|development|FPGA|logi-family|logi-hard|hdl|wishbone|peripherals|wishbone_fifo.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>cam_deser_0 - deser_1_4 (/home/jpiat/development/FPGA/logi-family/logi-mt9v034/hw/logibone/ise/ipcore_dir/deser_1_4.xco)</SelectedItem>
+         <SelectedItem>synchronizer_0 - fifo_sync (/home/jpiat/development/FPGA/logi-family/logi-mt9v034/hw/logibone/ise/ipcore_dir/fifo_sync.xco)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000026b000000020000000000000000000000000200000064ffffffff0000008100000003000000020000026b0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>cam_deser_0 - deser_1_4 (/home/jpiat/development/FPGA/logi-family/logi-mt9v034/hw/logibone/ise/ipcore_dir/deser_1_4.xco)</CurrentItem>
+      <CurrentItem>synchronizer_0 - fifo_sync (/home/jpiat/development/FPGA/logi-family/logi-mt9v034/hw/logibone/ise/ipcore_dir/fifo_sync.xco)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -41,7 +40,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000012a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000012a0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f2000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f20000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -52,7 +51,7 @@
       <SelectedItems>
          <SelectedItem>logi_wishbone_pack.vhd</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >5</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >2</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000004b5000000040101000100000000000000000000000064ffffffff000000810000000000000004000002b200000001000000000000011b0000000100000000000000840000000100000000000000640000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>

@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.1
-# Date: Sun Jun 28 12:20:38 2015
+# Date: Mon Jun 29 13:17:12 2015
 #
 ##############################################################
 #
@@ -54,7 +54,7 @@ CSET clk_delay=FIXED
 CSET clk_fwd=false
 CSET clk_io_std=LVDS_33
 CSET clk_sig_type=DIFF
-CSET clk_tap=10
+CSET clk_tap=0
 CSET component_name=deser_1_4
 CSET ddr_alignment=C0
 CSET enable_bitslip=false
@@ -85,4 +85,4 @@ CSET v6_oddr_alignment=SAME_EDGE
 MISC pkg_timestamp=2012-03-26T12:54:40Z
 # END Extra information
 GENERATE
-# CRC: 51af4076
+# CRC:  63ffd28

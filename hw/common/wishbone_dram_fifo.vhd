@@ -184,6 +184,7 @@ begin
 		  read_ack_old <= read_ack ;
     end if;
 end process read_bloc;
+--control_latched  <= control_data ;
 read_ack_fe <= (not read_ack) and read_ack_old;
 
 wbs_ack <= read_ack or write_ack;

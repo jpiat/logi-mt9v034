@@ -358,7 +358,7 @@ cam_deser_0 : deser_1_4
 
 
 cam_0 : cam_deser_4_to_pixels_v2
-generic map(INVERT_DATA => true)
+generic map(INVERT_DATA => false)
 port map(
 	deser_clk => DESER_CLK_DIV, 
 	sys_clk => gls_clk,

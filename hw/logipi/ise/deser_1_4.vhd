@@ -126,7 +126,7 @@ begin
   iodelay2_clk : IODELAY2
   generic map (
      DATA_RATE             => "SDR",
-     IDELAY_VALUE          => 10,
+     IDELAY_VALUE          => 0,
      IDELAY_TYPE           => "FIXED",
      COUNTER_WRAPAROUND    => "STAY_AT_LIMIT",
      DELAY_SRC             => "IDATAIN",

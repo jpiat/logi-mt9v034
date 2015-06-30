@@ -10,6 +10,7 @@ library work ;
 use work.logi_wishbone_pack.all ;
 use work.logi_wishbone_peripherals_pack.all ;
 use work.image_pack.all ;
+use work.logi_communication_pack.all ;
 
 
 entity logipi_mt9v034 is
@@ -27,8 +28,8 @@ entity logipi_mt9v034 is
 		SATA_DATA_P, SATA_DATA_N : in std_logic ;
 		SATA_CLK_P, SATA_CLK_N : in std_logic ;
 
+		PMOD4 : inout std_logic_vector(7 downto 0);
 		-- DRAM INTERFACE
-		
 		SDRAM_CLK   : out   STD_LOGIC;
 		SDRAM_CKE   : out   STD_LOGIC;
 		--SDRAM_CS    : out   STD_LOGIC;
@@ -197,11 +198,12 @@ end component;
 signal Master_0_wbm_Intercon_0_wbs_0 : wishbone_bus;	
 signal Intercon_0_wbm_REG_0_wbs_0 : wishbone_bus;
 signal Intercon_0_wbm_FIFO_0_wbs_0 : wishbone_bus;
-
+signal Intercon_0_wbm_I2C_0_wbs_0 : wishbone_bus;
 
 
 
 signal gls_clk, gls_clk_unbuf, gls_reset, gls_resetn, DESER_CLK_DIV, clk_locked, clkfb, osc_buff : std_logic ;
+signal clk_cam, clk_cam_unbuf : std_logic ;
 signal deser_data : std_logic_vector(3 downto 0);
 signal sync_errors : std_logic_vector(15 downto 0);
 signal synced, synced_old, pixel_out_clk : std_logic ;
@@ -263,7 +265,8 @@ intercon0 : wishbone_intercon
 generic map(memory_map => 
 (
 "000100000000000X", -- reg0
-"000000XXXXXXXXXX"
+"00100000000000XX", -- i2c0
+"000000XXXXXXXXXX" -- fifo0
 )
 )
 port map(
@@ -280,26 +283,33 @@ port map(
 		wbs_ack =>  Master_0_wbm_Intercon_0_wbs_0.ack,
 		-- Wishbone master signals
 		wbm_address(0) =>  Intercon_0_wbm_REG_0_wbs_0.address,
-		wbm_address(1) =>  Intercon_0_wbm_FIFO_0_wbs_0.address,
+		wbm_address(1) =>  Intercon_0_wbm_I2C_0_wbs_0.address,
+		wbm_address(2) =>  Intercon_0_wbm_FIFO_0_wbs_0.address,
 
 		wbm_writedata(0) =>  Intercon_0_wbm_REG_0_wbs_0.writedata,
-		wbm_writedata(1) =>  Intercon_0_wbm_FIFO_0_wbs_0.writedata,	
+		wbm_writedata(1) =>  Intercon_0_wbm_I2C_0_wbs_0.writedata,
+		wbm_writedata(2) =>  Intercon_0_wbm_FIFO_0_wbs_0.writedata,	
 		
 		wbm_readdata(0) =>  Intercon_0_wbm_REG_0_wbs_0.readdata,
-		wbm_readdata(1) =>  Intercon_0_wbm_FIFO_0_wbs_0.readdata,
+		wbm_readdata(1) =>  Intercon_0_wbm_I2C_0_wbs_0.readdata,
+		wbm_readdata(2) =>  Intercon_0_wbm_FIFO_0_wbs_0.readdata,
 
 		wbm_cycle(0) =>  Intercon_0_wbm_REG_0_wbs_0.cycle,
-		wbm_cycle(1) =>  Intercon_0_wbm_FIFO_0_wbs_0.cycle,
+		wbm_cycle(1) =>  Intercon_0_wbm_I2C_0_wbs_0.cycle,
+		wbm_cycle(2) =>  Intercon_0_wbm_FIFO_0_wbs_0.cycle,
 
 
 		wbm_strobe(0) =>  Intercon_0_wbm_REG_0_wbs_0.strobe,
-		wbm_strobe(1) =>  Intercon_0_wbm_FIFO_0_wbs_0.strobe,	
+		wbm_strobe(1) =>  Intercon_0_wbm_I2C_0_wbs_0.strobe,
+		wbm_strobe(2) =>  Intercon_0_wbm_FIFO_0_wbs_0.strobe,	
 		
 		wbm_write(0) =>  Intercon_0_wbm_REG_0_wbs_0.write,
-		wbm_write(1) =>  Intercon_0_wbm_FIFO_0_wbs_0.write,
+		wbm_write(1) =>  Intercon_0_wbm_I2C_0_wbs_0.write,
+		wbm_write(2) =>  Intercon_0_wbm_FIFO_0_wbs_0.write,
 
 		wbm_ack(0) =>  Intercon_0_wbm_REG_0_wbs_0.ack,
-		wbm_ack(1) =>  Intercon_0_wbm_FIFO_0_wbs_0.ack
+		wbm_ack(1) =>  Intercon_0_wbm_I2C_0_wbs_0.ack,
+		wbm_ack(2) =>  Intercon_0_wbm_FIFO_0_wbs_0.ack
 
 	
 		
@@ -323,12 +333,34 @@ port map(
 			wbs_cycle      => Intercon_0_wbm_REG_0_wbs_0.cycle, 
 			
 			reg_in(0) => sync_errors,
+			--reg_in(0) => X"DEAD",
 			reg_in(1)(15 downto 10) => (others => '0'),
 			reg_in(1)(9 downto 0) => raw_deser_latched,
+			--reg_in(1) => X"BEEF",
 			reg_out(0)(15 downto 1) => open,
 			reg_out(0)(0)=> pipeline_reset,
 			reg_out(1)=> open
 	 );		
+
+I2C_0 : wishbone_i2c_master
+	 port map
+	 (
+		 	gls_reset => gls_reset,
+			gls_clk   => gls_clk,
+
+
+			wbs_address    => Intercon_0_wbm_I2C_0_wbs_0.address,  	
+			wbs_readdata   => Intercon_0_wbm_I2C_0_wbs_0.readdata,  	
+			wbs_writedata 	=> Intercon_0_wbm_I2C_0_wbs_0.writedata,  
+			wbs_strobe     => Intercon_0_wbm_I2C_0_wbs_0.strobe,      
+			wbs_write      => Intercon_0_wbm_I2C_0_wbs_0.write,    
+			wbs_ack        => Intercon_0_wbm_I2C_0_wbs_0.ack,    
+			wbs_cycle      => Intercon_0_wbm_I2C_0_wbs_0.cycle, 
+		  -- out signals
+		  scl => PMOD4(6),
+		  sda => PMOD4(2)
+	 );
+
 
 
 
@@ -494,13 +526,15 @@ beat_0  :heart_beat
            beat_out => led(1));		  
 -- system clock generation
 
+PMOD4(3) <= clk_cam ;
+
 PLL_BASE_inst : PLL_BASE generic map (
       BANDWIDTH      => "OPTIMIZED",        -- "HIGH", "LOW" or "OPTIMIZED" 
       CLKFBOUT_MULT  => 12 ,                 -- Multiply value for all CLKOUT clock outputs (1-64)
       CLKFBOUT_PHASE => 0.0,                -- Phase offset in degrees of the clock feedback output (0.0-360.0).
       CLKIN_PERIOD   => 20.00,              -- Input clock period in ns to ps resolution (i.e. 33.333 is 30 MHz).
       -- CLKOUT0_DIVIDE - CLKOUT5_DIVIDE: Divide amount for CLKOUT# clock output (1-128)
-      CLKOUT0_DIVIDE => 6,       CLKOUT1_DIVIDE =>1,
+      CLKOUT0_DIVIDE => 6,       CLKOUT1_DIVIDE =>24,
       CLKOUT2_DIVIDE => 1,       CLKOUT3_DIVIDE => 1,
       CLKOUT4_DIVIDE => 1,       CLKOUT5_DIVIDE => 1,
       -- CLKOUT0_DUTY_CYCLE - CLKOUT5_DUTY_CYCLE: Duty cycle for CLKOUT# clock output (0.01-0.99).
@@ -520,7 +554,7 @@ PLL_BASE_inst : PLL_BASE generic map (
    ) port map (
       CLKFBOUT => clkfb, -- 1-bit output: PLL_BASE feedback output
       -- CLKOUT0 - CLKOUT5: 1-bit (each) output: Clock outputs
-      CLKOUT0 => gls_clk_unbuf,      CLKOUT1 => open,
+      CLKOUT0 => gls_clk_unbuf,      CLKOUT1 => clk_cam_unbuf,
       CLKOUT2 => open,      CLKOUT3 => open,
       CLKOUT4 => open,      CLKOUT5 => open,
       LOCKED  => clk_locked,  -- 1-bit output: PLL_BASE lock status output
@@ -532,6 +566,7 @@ PLL_BASE_inst : PLL_BASE generic map (
     -- Buffering of clocks
 	BUFG_1 : BUFG port map (O => osc_buff,    I => OSC_FPGA);
 	BUFG_2 : BUFG port map (O => gls_clk,    I => gls_clk_unbuf);
+	BUFG_3 : BUFG port map (O => clk_cam,    I => clk_cam_unbuf);
 
 
 end structural ;

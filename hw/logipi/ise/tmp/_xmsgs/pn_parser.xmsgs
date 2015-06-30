@@ -11,8 +11,5 @@
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/jpiat/development/FPGA/logi-family/logi-mt9v034/hw/logipi/ise/deser_1_4.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/jpiat/development/FPGA/logi-family/logi-mt9v034/hw/logipi/ise/deser_1_4/example_design/deser_1_4_exdes.vhd&quot; into library work</arg>
-</msg>
-
 </messages>
 

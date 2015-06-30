@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2015-06-28T14:10:02</DateModified>
+  <DateModified>2015-06-29T19:33:43</DateModified>
   <ModuleName>logibone_mt9v034</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
+  <SummaryTimeStamp>2015-06-29T10:00:01</SummaryTimeStamp>
   <ImplementationReportsDirectory>/home/jpiat/development/FPGA/logi-family/logi-mt9v034/hw/logibone/work/</ImplementationReportsDirectory>
   <DateInitialized>2015-02-28T15:13:40</DateInitialized>
   <SavedFilePath>/home/jpiat/development/FPGA/logi-family/logi-mt9v034/hw/logibone/ise/iseconfig/logibone_mt9v034.xreport</SavedFilePath>

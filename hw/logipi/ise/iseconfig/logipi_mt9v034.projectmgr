@@ -10,19 +10,19 @@
          <ClosedNode>/dram_fifo - Behavioral |home|jpiat|development|FPGA|logi-family|logi-hard|hdl|utils|dram_fifo.vhd</ClosedNode>
          <ClosedNode>/logipi_mt9v034 - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logipi|hdl|logipi_mt9v034.vhd/FiFO_0 - wishbone_dram_fifo - RTL</ClosedNode>
          <ClosedNode>/logipi_mt9v034 - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logipi|hdl|logipi_mt9v034.vhd/cam_0 - cam_deser_4_to_pixels_v2 - Behavioral</ClosedNode>
-         <ClosedNode>/sdram_fifo_test - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logipi|hdl|sdram_fifo_test.vhd</ClosedNode>
+         <ClosedNode>/logipi_mt9v034 - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logipi|hdl|logipi_mt9v034.vhd/control_pack</ClosedNode>
          <ClosedNode>/sdram_fifo_test - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logipi|hdl|sdram_fifo_test.vhd/FiFO_0 - wishbone_dram_fifo - RTL</ClosedNode>
          <ClosedNode>/sdram_fifo_test - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logipi|hdl|sdram_fifo_test.vhd/control_pack</ClosedNode>
          <ClosedNode>/sdram_fifo_test - structural |home|jpiat|development|FPGA|logi-family|logi-mt9v034|hw|logipi|hdl|sdram_fifo_test.vhd/logi_primitive_pack</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>sdram_fifo_test - structural (/home/jpiat/development/FPGA/logi-family/logi-mt9v034/hw/logipi/hdl/sdram_fifo_test.vhd)</SelectedItem>
+         <SelectedItem>logipi_mt9v034 - structural (/home/jpiat/development/FPGA/logi-family/logi-mt9v034/hw/logipi/hdl/logipi_mt9v034.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >4</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >2</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000026b000000020000000000000000000000000200000064ffffffff0000008100000003000000020000026b0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>sdram_fifo_test - structural (/home/jpiat/development/FPGA/logi-family/logi-mt9v034/hw/logipi/hdl/sdram_fifo_test.vhd)</CurrentItem>
+      <CurrentItem>logipi_mt9v034 - structural (/home/jpiat/development/FPGA/logi-family/logi-mt9v034/hw/logipi/hdl/logipi_mt9v034.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -30,26 +30,24 @@
          <ClosedNode>Design Utilities</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000127000000010000000100000000000000000000000064ffffffff000000810000000000000001000001270000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f2000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f20000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
-      <SelectedItems>
-         <SelectedItem>logipi_ra1.ucf</SelectedItem>
-      </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >6</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000027b000000040101000100000000000000000000000064ffffffff000000810000000000000004000000e00000000100000000000000290000000100000000000000840000000100000000000000ee0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>logipi_ra1.ucf</CurrentItem>
+      <CurrentItem>cam_deser_4_to_pixels.vhd</CurrentItem>
    </ItemView>
    <ItemView guiview="Library" >
       <ClosedNodes>
@@ -77,7 +75,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000012a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000012a0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000e3000000010000000100000000000000000000000064ffffffff000000810000000000000001000000e30000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -88,12 +86,26 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>View HDL Instantiation Template</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000127000000010000000100000000000000000000000064ffffffff000000810000000000000001000001270000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f2000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f20000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>View HDL Instantiation Template</CurrentItem>
+      <CurrentItem></CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f2000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f20000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
    </ItemView>
 </Project>
