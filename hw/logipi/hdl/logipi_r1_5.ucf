@@ -108,11 +108,11 @@ NET "SDRAM_DQ<15>"		LOC = "P55"			| IOSTANDARD = LVTTL ;
 ##PMOD4#############################################################################
 NET "PMOD4<0>" 			LOC = "P112" 		| IOSTANDARD = LVTTL;
 NET "PMOD4<1>" 			LOC = "P111" 		| IOSTANDARD = LVTTL;
-NET "PMOD4<2>" 			LOC = "P132" 		| IOSTANDARD = LVTTL;
+NET "PMOD4<2>" 			LOC = "P132" 		| IOSTANDARD = LVTTL | PULLUP;
 NET "PMOD4<3>" 			LOC = "P131" 		| IOSTANDARD = LVTTL;
 NET "PMOD4<4>" 			LOC = "P115" 		| IOSTANDARD = LVTTL;
 NET "PMOD4<5>" 			LOC = "P114" 		| IOSTANDARD = LVTTL;
-NET "PMOD4<6>" 			LOC = "P134" 		| IOSTANDARD = LVTTL;
+NET "PMOD4<6>" 			LOC = "P134" 		| IOSTANDARD = LVTTL | PULLUP;
 NET "PMOD4<7>" 			LOC = "P133" 		| IOSTANDARD = LVTTL;
 
 #PMOD4 LVDS CONSTRAINTS#############################################################

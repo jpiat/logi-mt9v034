@@ -357,6 +357,8 @@ I2C_0 : wishbone_i2c_master
 			wbs_ack        => Intercon_0_wbm_I2C_0_wbs_0.ack,    
 			wbs_cycle      => Intercon_0_wbm_I2C_0_wbs_0.cycle, 
 		  -- out signals
+		  --scl => open,
+		  --sda => open
 		  scl => PMOD4(6),
 		  sda => PMOD4(2)
 	 );
@@ -382,7 +384,7 @@ cam_deser_0 : deser_1_4
 
 
 cam_0 : cam_deser_4_to_pixels_v2
-generic map(INVERT_DATA => true)
+generic map(INVERT_DATA => false)
 port map(
 	deser_clk => DESER_CLK_DIV, 
 	sys_clk => gls_clk,

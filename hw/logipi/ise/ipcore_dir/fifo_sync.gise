@@ -27,6 +27,23 @@
     <file xil_pn:fileType="FILE_VHO" xil_pn:name="fifo_sync.vho" xil_pn:origination="imported"/>
   </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1435759672" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="-4826503674291797682" xil_pn:start_ts="1435759672">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1435759672" xil_pn:name="TRAN_regenerateCores" xil_pn:prop_ck="-814232758687401410" xil_pn:start_ts="1435759672">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1435759672" xil_pn:name="TRAN_SubProjectAbstractToPreProxy" xil_pn:start_ts="1435759672">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1435759672" xil_pn:name="TRAN_xawsTohdl" xil_pn:prop_ck="-1570178054483853296" xil_pn:start_ts="1435759672">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+  </transforms>
 
 </generated_project>

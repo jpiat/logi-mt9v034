@@ -13,8 +13,9 @@
 
 //I2C
 #define CAM_ADDR	0x48
+#define I2C_ADDR 0x2000
 
-
+#define SLAVE_ADDR_SHIFT 9
 int i2c_fd ;
 
 int init_i2c();
@@ -24,34 +25,52 @@ int init_i2c();
 static inline void i2c_set_register(unsigned char reg_addr, unsigned short reg_value)
 {
 	short buffer ;
-	buffer = 0x0001 ;
-	while((buffer & 0x01) != 0x00 && (buffer & 0x02) != 0x02 ){
-		logi_read(&buffer, 2, I2C_ADDR+1);
-	}
-	if((buffer & 0x02) == 0x02){
-		printf("NACK error !\n");
-		buffer = (CAM_ADDR << 8) | 0x01;
-		logi_write(&buffer, 2, I2C_ADDR+1);
-		buffer = (CAM_ADDR << 8) ;
-		logi_write(&buffer, 2, I2C_ADDR+1);
-		return  ;
-	}
+	char buffer_val [3];
+	
+	buffer = CAM_ADDR << 8 | 0x01 ;
+        logi_write(&buffer, 2, I2C_ADDR+1);
+        buffer = CAM_ADDR << 8  ;
+        logi_write(&buffer, 2, I2C_ADDR+1);
 
-	buffer = (CAM_ADDR << 8);
+	buffer = (CAM_ADDR << SLAVE_ADDR_SHIFT);
         logi_write(&buffer, 2, I2C_ADDR+1); // disable master
-		
-	buffer =reg_addr ; // write to fifo
+
+	buffer  = reg_addr & 0xFF ; // write to fifo
 	logi_write(&buffer, 2, I2C_ADDR);
-		
-	buffer = (reg_value >> 8) & 0xFF;
+
+	buffer = (reg_value >> 8) & 0x00FF;
+        logi_write(&buffer, 2, I2C_ADDR);
+
+	/*buffer = (reg_value >> 8) & 0x00FF;
+        logi_write(&buffer, 2, I2C_ADDR);
+	*/
+	
+	buffer = (reg_value & 0x00FF);
         logi_write(&buffer, 2, I2C_ADDR);
 	
-	buffer = (reg_value & 0xFF);
-        logi_write(&buffer, 2, I2C_ADDR);
-		
-	buffer =(CAM_ADDR << 8) | 0x02; 
+
+	buffer =(CAM_ADDR << SLAVE_ADDR_SHIFT) | 0x02; 
 	logi_write(&buffer, 2, I2C_ADDR+1); //enable master
+
+	buffer = 0x0001 ;
+        while((buffer & 0x01) != 0x00 && (buffer & 0x02) != 0x02 ){
+                logi_read(&buffer, 2, I2C_ADDR+1);
+        }
+	
+	if((buffer & 0x02) == 0x02){
+                printf("NACK error !\n");
+                buffer = (CAM_ADDR << SLAVE_ADDR_SHIFT) | 0x01;
+                logi_write(&buffer, 2, I2C_ADDR+1);
+                buffer = (CAM_ADDR << SLAVE_ADDR_SHIFT) ;
+                logi_write(&buffer, 2, I2C_ADDR+1);
+                return  ;
+        }
+	
+	buffer = (CAM_ADDR << SLAVE_ADDR_SHIFT);
+        logi_write(&buffer, 2, I2C_ADDR+1); // disable master
+
 }
+
 
 
 
@@ -60,7 +79,7 @@ static inline void i2c_set_register(unsigned char reg_addr, unsigned short reg_v
 int init_i2c(){
 	unsigned int i=0 ;
 	unsigned short buffer ;
-	buffer = CAM_ADDR << 8 | 0x01
+	buffer = CAM_ADDR << 8 | 0x01 ;
 	logi_write(&buffer, 2, I2C_ADDR+1);
 	buffer = CAM_ADDR << 8  ;
         logi_write(&buffer, 2, I2C_ADDR+1);
@@ -73,7 +92,7 @@ int main(int argc, char ** argv){
 	printf("start of register programming \n");
 	i2c_set_register(0x0C, 0x0001); //soft reset
 	i2c_set_register(0x0C, 0x0000); //soft reset
-	i2c_set_register(0xB1, 0x0000);
+        i2c_set_register(0xB1, 0x0000);
 	i2c_set_register(0xB2, 0x0000);
 	i2c_set_register(0xB5, 0x0000); //generate sync pattern with 0 and start stop 	
 	i2c_set_register(0xB6, 0x0000);
