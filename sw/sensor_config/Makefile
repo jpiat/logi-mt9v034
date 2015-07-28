@@ -2,7 +2,7 @@ CC = gcc
 C_FLAGS = -O3 
 LD_FLAGS = -lc -ljpeg -llogi
 
-all: grab
+all: conf_mt9v034
 
 clean:
 	rm -f *.a *.o conf_mt9v034
