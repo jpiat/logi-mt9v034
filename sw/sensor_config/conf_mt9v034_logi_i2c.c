@@ -100,7 +100,7 @@ int main(int argc, char ** argv){
 	i2c_set_register(0x03, 480); //window height
 	i2c_set_register(0x01, 1); // col start
 	i2c_set_register(0x02, 4); //row start
-	i2c_set_register(0x0D, (1 << 4));
+        i2c_set_register(0x0D, ((1 << 4)|(1 << 5)));
 	i2c_set_register(0x07, ((1 << 3)|(1 << 8)|(1 << 9)));//chip control, disable parallel output, other are default
 	i2c_set_register(0x72, 0x0000); //sync ctrl
 	//i2c_set_register(0x7F, ((1 << 13) | (1 << 10) | (1 << 5))); //test pattern
